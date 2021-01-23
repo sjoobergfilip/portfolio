@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const SingleProject = () => {
-    return (
-        <div>
-            <h1>This is SingleProject</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h1>This is SingleProject</h1>
+    </div>
+  );
+};
 
-export default SingleProject
+export default SingleProject;
