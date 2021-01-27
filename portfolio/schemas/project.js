@@ -25,7 +25,13 @@ export default {
             type: "string"
         },
         {
-            name: "description",
+            name: "mainDescription",
+            title: "Main description",
+            type: "text"
+        },
+        {
+            name: "shortDescription",
+            title: "Short description",
             type: "text"
         },
         {
@@ -34,11 +40,12 @@ export default {
             type: "string",
             options: {
                 list: [
-                    { value: "personal", title: "Personal" },
-                    { value: "client", title: "Client" },
-                    { value: "school", title: "School" },
-                    { value: "work", title: "Work" },
-                    { value: "internship", title: "Internship" }
+                    { value: "Personal", title: "Personal" },
+                    { value: "Client", title: "Client" },
+                    { value: "School", title: "School" },
+                    { value: "Work", title: "Work" },
+                    { value: "Internship", title: "Internship" },
+                    { value: "Design", title: "Design" }
                 ]
             }
         },
@@ -65,6 +72,12 @@ export default {
             options: {
                 hotspot: true
             }
+        },
+        {
+            name: "imagesGallery",
+            title: "Images gallery",
+            type: "array",
+            of: [{ type: "image" }]
         }
     ]
 };

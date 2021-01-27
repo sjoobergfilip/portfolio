@@ -10,20 +10,12 @@ const Project = () => {
     const [loading, setLoading] = useState(null);
     const [hover, setHover] = useState(false);
 
-    const projectRef = React.useRef(null);
-
-    const onHover = e => {
-        console.log("my refIs", projectRef.current.id);
-        console.log("e.target is:", e.target.id);
-        if (projectRef.current.id === e.target.id) {
-            console.log("success");
-            setHover(true);
-        }
+    const onHover = project => {
+        console.log(project);
     };
 
     const onLeave = () => {
         setHover(false);
-        console.log("I'm leaving this imgs, my ref is:");
     };
 
     useEffect(() => {
@@ -34,11 +26,13 @@ const Project = () => {
               title,
               date,
               place,
-              description,
+              mainDescription,
+              shortDescription,
               projectType,
               link,
               tags,
               slug,
+              imagesGallery,
                 mainImage{
                     asset->{
                         _id,
@@ -90,17 +84,24 @@ const Project = () => {
                                         className="w-full h-full rounded-r object-cover absolute"
                                     />
                                     <div
-                                        onMouseEnter={onHover}
+                                        onMouseEnter={() => onHover(project)}
                                         onMouseLeave={onLeave}
-                                        ref={projectRef}
-                                        className="block relative h-full flex justify-start items-start pr-4 pb-4"
-                                        id={project.slug.current}
+                                        className="opacity-0 hover:opacity-90 hover:bg-gray-900  transition-all duration-600 block relative h-full flex justify-start items-start pr-4 pb-4"
                                     >
-                                        {hover && (
-                                            <h3 className="text-red-200">
+                                        <div className="flex flex-col">
+                                            <span className="text-gray-50 text-4xl uppercase pl-10 pt-10 underline">
                                                 {project.title}
-                                            </h3>
-                                        )}
+                                            </span>
+                                            <span className="text-gray-50 px-10 mt-5 uppercase">
+                                                {project.place}
+                                            </span>
+                                            <span className="text-gray-50 px-10 mt-1 uppercase">
+                                                {project.projectType}
+                                            </span>
+                                            <p className="mt-4 text-lg text-gray-50 leading-relaxed px-10 italic">
+                                                {project.shortDescription}
+                                            </p>
+                                        </div>
                                     </div>
                                 </article>
                             </Link>
