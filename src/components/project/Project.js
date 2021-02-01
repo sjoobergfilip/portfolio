@@ -26,7 +26,6 @@ const Project = () => {
               title,
               date,
               place,
-              mainDescription,
               shortDescription,
               projectType,
               link,
