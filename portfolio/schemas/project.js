@@ -25,9 +25,9 @@ export default {
             type: "string"
         },
         {
-            name: "mainDescription",
-            title: "Main description",
-            type: "text"
+            name: "body",
+            title: "Body",
+            type: "blockContent"
         },
         {
             name: "shortDescription",
@@ -51,6 +51,10 @@ export default {
         },
         {
             name: "link",
+            type: "url"
+        },
+        {
+            name: "github",
             type: "url"
         },
         {

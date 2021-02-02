@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../../client";
-import imageUrlBuilder from "@sanity/image-url";
 import LazyHero from "react-lazy-hero";
+import BlockContent from "@sanity/block-content-to-react";
+import "./Project.css";
 
 const SingleProject = () => {
     const [project, setProject] = useState(null);
     const { slug } = useParams();
-
-    const builder = imageUrlBuilder(sanityClient);
-    function urlFor(source) {
-        return builder.image(source);
-    }
 
     useEffect(() => {
         sanityClient
@@ -37,6 +33,7 @@ const SingleProject = () => {
                 alt
             }, 
             link,
+            github,
             projectType,
             place,
 
@@ -47,6 +44,7 @@ const SingleProject = () => {
     }, [slug]);
 
     if (!project) return <div>Loading</div>;
+    console.log("this is my body", project.mainDescription);
 
     return (
         <main className="bg-gray-800 min-h-screen">
@@ -55,8 +53,10 @@ const SingleProject = () => {
                     {project.title}
                 </h1>
                 <div className="flex justify-center">
-                    <p className="text-gray-50 mr-7">{project.projectType}</p>
-                    <p className="text-gray-50">{project.place}</p>
+                    <p className="text-gray-50 mr-7 italic">
+                        {project.projectType}
+                    </p>
+                    <p className="text-gray-50 italic">{project.place}</p>
                 </div>
                 <a
                     className="text-gray-50 mr-7 underline flex justify-center text-center hover:text-yellow-300"
@@ -65,6 +65,19 @@ const SingleProject = () => {
                     {project.link}
                 </a>
             </LazyHero>
+            <div className=" lg:px-30 py-12 lg:py-20 prose max-w-900 m-auto text-gray-50 flex flex-col">
+                <BlockContent
+                    blocks={project.body}
+                    projectId="qbil2d7s"
+                    dataset="production"
+                />
+                <a className="github" href={project.github} target="_blank">
+                    {project.github}
+                </a>
+                <a className="github" href={project.link} target="_blank">
+                    {project.link}
+                </a>
+            </div>
         </main>
     );
 };
