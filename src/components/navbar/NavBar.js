@@ -1,20 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
+import Logo from "../../assets/img/LM_white.png"
 import "../../index.css";
 
 const NavBar = () => {
     return (
         <header className="bg-gray-800">
             <div className="container mx-auto flex justify-between">
-                <nav className="flex">
+                <nav className="flex nav-link-font">
                     <NavLink
                         to="/"
                         exact
                         activeClassName="nav-link-active"
                         className="home-name inflex-flex items-center py-6 px-3 mr-4 text-gray-100 hover:text-gray-5 text-3xl font-bold cursive tracking-widest"
                     >
-                        LakeMountain
+                        <img src={Logo} className="w-14 " alt="logo" />
                     </NavLink>
                     <NavLink
                         to="/project"

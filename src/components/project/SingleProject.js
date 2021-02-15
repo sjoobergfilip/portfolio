@@ -4,6 +4,7 @@ import sanityClient from "../../client";
 import LazyHero from "react-lazy-hero";
 import BlockContent from "@sanity/block-content-to-react";
 import "./Project.css";
+import Loader from '../loader/Loader'
 
 const SingleProject = () => {
     const [project, setProject] = useState(null);
@@ -43,24 +44,24 @@ const SingleProject = () => {
             .catch(console.error);
     }, [slug]);
 
-    if (!project) return <div>Loading</div>;
-    console.log("this is my body", project.mainDescription);
-
+    if (!project) return <Loader />
     return (
         <main className="bg-gray-800 min-h-screen">
             <LazyHero color="#1D2938" imageSrc={project.mainImage.asset.url}>
-                <h1 className="text-gray-50 text-4xl uppercase">
+                <h1 className="text-gray-50 text-4xl uppercase project-title">
                     {project.title}
                 </h1>
                 <div className="flex justify-center">
-                    <p className="text-gray-50 mr-7 italic">
+                    <p className="text-gray-50 mr-7 italic project-info ">
                         {project.projectType}
                     </p>
-                    <p className="text-gray-50 italic">{project.place}</p>
+                    <p className="text-gray-50 italic project-info ">{project.place}</p>
                 </div>
                 <a
                     className="text-gray-50 mr-7 underline flex justify-center text-center hover:text-yellow-300"
                     href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
                 >
                     {project.link}
                 </a>
@@ -71,10 +72,10 @@ const SingleProject = () => {
                     projectId="qbil2d7s"
                     dataset="production"
                 />
-                <a className="github" href={project.github} target="_blank">
+                <a className="github" href={project.github} target="_blank" rel="noreferrer">
                     {project.github}
                 </a>
-                <a className="github" href={project.link} target="_blank">
+                <a className="github" href={project.link} target="_blank" rel="noreferrer">
                     {project.link}
                 </a>
             </div>

@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../../client";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
+import Loader from '../loader/Loader'
 
 const Post = () => {
     const [postData, setPostData] = useState(null);
     const [loading, setLoading] = useState(null);
 
     useEffect(() => {
-        setLoading(true);
         sanityClient
             .fetch(
                 `*[_type == "post"]{
@@ -25,31 +24,26 @@ const Post = () => {
             }`
             )
             .then(data => {
-                setLoading(false);
                 setPostData(data);
             })
             .catch(console.error);
     }, []);
 
+    if(!postData){
+        return <Loader />
+    }
+
     return (
-        <main className="bg-gray-800 min-h-screen p-12">
+        <main className="bg-gray-800 min-h-screen lg:p-12">
             <section className="container mx-auto">
-                <h1 className="text-5xl flex justify-center cursive text-gray-50">
+                <h1 className="text-5xl flex justify-center text-gray-50 heading">
                     Blog Posts Page
                 </h1>
-                <h2 className="text-lg text-gray-50 flex justify-center mb-12">
+                <h2 className="text-lg text-gray-50 flex justify-center mt-2 mb-12 cursive">
                     Welcome to my page of blog posts
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {loading ? (
-                        <Loader
-                            type="Rings"
-                            color="white"
-                            height={100}
-                            width={100}
-                        />
-                    ) : (
-                        postData &&
+                        {postData &&
                         postData.map((post, index) => (
                             <article>
                                 <Link
@@ -73,8 +67,7 @@ const Post = () => {
                                     </span>
                                 </Link>
                             </article>
-                        ))
-                    )}
+                        ))}
                 </div>
             </section>
         </main>

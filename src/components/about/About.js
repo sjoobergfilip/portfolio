@@ -4,12 +4,9 @@ import imageUrlBuilder from "@sanity/image-url";
 import LazyHero from "react-lazy-hero";
 import Patter from "./patter-01.png";
 import "./about.css";
+import Loader from '../loader/Loader'
 
 const About = () => {
-    const builder = imageUrlBuilder(sanityClient);
-    function urlFor(source) {
-        return builder.image(source);
-    }
 
     const [author, setAuthor] = useState(null);
     useEffect(() => {
@@ -26,7 +23,7 @@ const About = () => {
     }, []);
 
     if (!author) {
-        return <div>loading......</div>;
+        return <Loader />;
     }
 
     return (

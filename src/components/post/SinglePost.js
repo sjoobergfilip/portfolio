@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import sanityClient from "../../client";
 import LazyHero from "react-lazy-hero";
 import BlockContent from "@sanity/block-content-to-react";
+import Loader from '../loader/Loader'
 
 const SinglePost = () => {
     const [post, setPost] = useState(null);
@@ -29,7 +30,7 @@ const SinglePost = () => {
             .catch(console.error);
     }, [slug]);
 
-    if (!post) return <div>Loading</div>;
+    if (!post) return <Loader />
     return (
         <main className="bg-gray-800 min-h-screen">
             <LazyHero color="#1D2938" imageSrc={post.mainImage.asset.url}>
