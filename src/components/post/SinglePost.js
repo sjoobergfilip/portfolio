@@ -34,7 +34,7 @@ const SinglePost = () => {
     return (
         <main className="bg-gray-800 min-h-screen">
             <LazyHero color="#1D2938" imageSrc={post.mainImage.asset.url}>
-                <h1 className="text-gray-50 text-4xl uppercase">
+                <h1 className="text-gray-50 text-4xl uppercase project-title">
                     {post.title}
                 </h1>
             </LazyHero>

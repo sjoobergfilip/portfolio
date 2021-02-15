@@ -22,7 +22,7 @@ const NavBar = () => {
                         activeClassName="nav-link-active"
                         className="inline-flex items-center py-3 px-3 my-6 rounded text-gray-400 hover:text-gray-50"
                     >
-                        Project
+                        Projects
                     </NavLink>
                     <NavLink
                         to="/post"
