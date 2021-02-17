@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import sanityClient from "../../client";
 import { Link } from "react-router-dom";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -99,12 +99,6 @@ const Project = () => {
     return (
         <main className="bg-gray-800 min-h-screen lg:p-12">
             <section className="container mx-auto">
-                <h1 className="text-5xl flex justify-center text-gray-50 heading">
-                    My project
-                </h1>
-                <h2 className="text-lg text-gray-50 flex justify-center mt-2 mb-12 cursive">
-                    Welcome to my projects
-                </h2>
                 <div>
                     <div className="flex my-2 justify-end text-gray-50 mb-4">
                         <p onClick={filterAll} className={activeAll ? "filter-active mr-2" : "filter mr-2" }>All</p>
