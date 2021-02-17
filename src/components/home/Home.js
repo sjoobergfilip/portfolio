@@ -1,4 +1,5 @@
 import './home.css'
+import { SocialIcon } from "react-social-icons";
 const Home = () => {
     return (
         <main className="container-home lg:px-14">
@@ -10,6 +11,30 @@ const Home = () => {
                     <p className="text-gray-50 my-5 cursive">
                         My name is Filip an i'm a UX/UI designer and a Frontend developer, how have work at fitness24seven and some experience from frilanc project
                     </p>
+                </div>
+                <div className="mt-7 flex justify-center mb-4 lg:invisible md:invisible sm:invisible visible">
+                    <SocialIcon
+                        url="https://www.linkedin.com/in/filip-sj%C3%B6berg-a86550140/"
+                        className="mr-4"
+                        target="_blank"
+                        fgColor="#fff"
+                        style={{ height: 50, width: 50 }}
+                    />
+                    <SocialIcon
+                        url="https://github.com/sjoobergfilip"
+                        className="mr-4"
+                        target="_blank"
+                        bgColor="white"
+                        fgColor="black"
+                        style={{ height: 50, width: 50}}
+                    />
+                    <SocialIcon
+                        url="https://twitter.com/sjobergfilip"
+                        className="mr-4"
+                        target="_blank"
+                        fgColor="#fff"
+                        style={{ height: 50, width: 50 }}
+                    />
                 </div>
             </div>
         </main>

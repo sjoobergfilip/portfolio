@@ -7,7 +7,7 @@ import "../../index.css";
 const NavBar = () => {
     return (
         <header className="bg-gray-800">
-            <div className="container mx-auto flex justify-between">
+            <div className="container mx-auto flex lg:justify-between md:justify-between lg:flex-row md:flex-row flex-col">
                 <nav className="flex nav-link-font">
                     <NavLink
                         to="/"
@@ -39,7 +39,7 @@ const NavBar = () => {
                         About Me
                     </NavLink>
                 </nav>
-                <div className="mt-6">
+                <div className="lg:mt-6 md:mt-6 flex justify-center mb-4 lg:visible md:visible sm:visible invisible">
                     <SocialIcon
                         url="https://www.linkedin.com/in/filip-sj%C3%B6berg-a86550140/"
                         className="mr-4"

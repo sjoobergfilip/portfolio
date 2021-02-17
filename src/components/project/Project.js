@@ -100,7 +100,7 @@ const Project = () => {
         <main className="bg-gray-800 min-h-screen lg:p-12">
             <section className="container mx-auto">
                 <div>
-                    <div className="flex my-2 justify-end text-gray-50 mb-4">
+                    <div className="flex lg:justify-end md:justify-end justify-center text-gray-50 mb-4">
                         <p onClick={filterAll} className={activeAll ? "filter-active mr-2" : "filter mr-2" }>All</p>
                         <p onClick={filterUx} className={activeUx ? "filter-active mr-2" : "filter mr-2" }>UX-design</p>
                         <p onClick={filterFrontend} className={activeFrontend ? "filter-active mr-2" : "filter mr-2" }>Frontend</p>

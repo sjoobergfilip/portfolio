@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../../client";
-import imageUrlBuilder from "@sanity/image-url";
 import LazyHero from "react-lazy-hero";
 import Patter from "./patter-01.png";
 import "./about.css";
@@ -35,7 +34,7 @@ const About = () => {
                 <h2 className="text-left text-4xl text-gray-50 slogan">
                     My name is {author.name}
                 </h2>
-                <h2 className="text-3xl text-gray-50 slogan">
+                <h2 className="text-3xl text-gray-50 slogan text-left">
                     I'm a frontend developer and UX/UI designer
                 </h2>
             </LazyHero>

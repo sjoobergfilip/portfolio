@@ -70,3 +70,16 @@
     border-radius: 10px;
     transition: 0.2s;
 }
+
+@media screen and (max-width: 500px) {
+    .filter {
+        font-size: 12px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .filter-active {
+        font-size: 12px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
