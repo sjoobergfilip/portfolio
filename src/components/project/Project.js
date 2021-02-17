@@ -43,11 +43,6 @@ const Project = () => {
             .catch(console.error);
     }, []);
 
-    useEffect(() => {
-        console.log('this is filterData',filterData)
-        console.log('this is projectData',projectData)
-    }, [filterData])
-
     const filterAll = () =>{
         setActiveAll(true)
         setActiveUx(false)
