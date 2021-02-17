@@ -46,3 +46,27 @@
 .project-info {
     font-family: "Work Sans", sans-serif;
 }
+
+.filter {
+    border: 1px solid white;
+    padding: 10px 20px;
+    box-shadow: 2px 2px;
+    border-radius: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.filter:hover {
+    color: #222e3f;
+    background-color: white;
+    box-shadow: 0 0;
+}
+
+.filter-active {
+    border: 1px solid #222e3f;
+    color: #222e3f;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 0;
+    border-radius: 10px;
+    transition: 0.2s;
+}

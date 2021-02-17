@@ -78,10 +78,16 @@ export default {
             }
         },
         {
-            name: "imagesGallery",
-            title: "Images gallery",
-            type: "array",
-            of: [{ type: "image" }]
-        }
+            name: 'filtertype',
+            title: 'Filter type',
+            type: 'string',
+            options: {
+                list: [
+                    { value: "uxDesing", title: "UX-design" },
+                    { value: "frontend", title: "Frontend" },
+                    { value: "illustration", title: "Illustration" },
+                ]
+            }
+        },
     ]
 };
