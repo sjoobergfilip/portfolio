@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
-import Logo from "../../assets/img/LM_white.png"
+import Logo from "../../assets/img/LM_white.png";
 import "../../index.css";
 
 const NavBar = () => {
