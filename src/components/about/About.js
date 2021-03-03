@@ -3,10 +3,9 @@ import sanityClient from "../../client";
 import LazyHero from "react-lazy-hero";
 import Patter from "./patter-01.png";
 import "./about.css";
-import Loader from '../loader/Loader'
+import Loader from "../loader/Loader";
 
 const About = () => {
-
     const [author, setAuthor] = useState(null);
     useEffect(() => {
         sanityClient
@@ -17,7 +16,7 @@ const About = () => {
               "authorImage": image.asset->url
           }`
             )
-            .then(data => setAuthor(data[0]))
+            .then((data) => setAuthor(data[0]))
             .catch(console.error);
     }, []);
 
@@ -38,8 +37,8 @@ const About = () => {
                     I'm a frontend developer and UX/UI designer
                 </h2>
             </LazyHero>
-            <div className="pt-10 lg:px-56 container mx-auto relative"></div>
-            <div className="p-10 lg:pt-10 container mx-auto relative lg:px-56">
+            <div className="pt-10 lg:px-96 container mx-auto relative"></div>
+            <div className="p-10 lg:pt-10 lg:px-96 container mx-auto relative lg:px-56">
                 <p className="text-gray-50 m-auto ">{author.bio}</p>
             </div>
         </main>
