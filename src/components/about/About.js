@@ -4,6 +4,7 @@ import LazyHero from "react-lazy-hero";
 import Patter from "./patter-01.png";
 import "./about.css";
 import Loader from "../loader/Loader";
+import BlockContent from "@sanity/block-content-to-react";
 
 const About = () => {
     const [author, setAuthor] = useState(null);
@@ -12,13 +13,15 @@ const About = () => {
             .fetch(
                 `*[_type == "author"]{
               name,
-              "bio": bio[0].children[0].text,
-              "authorImage": image.asset->url
+              body,
           }`
             )
             .then((data) => setAuthor(data[0]))
             .catch(console.error);
     }, []);
+    useEffect(() => {
+        console.log("this is my author", author);
+    }, [author]);
 
     if (!author) {
         return <Loader />;
@@ -37,9 +40,12 @@ const About = () => {
                     I'm a frontend developer and UX/UI designer
                 </h2>
             </LazyHero>
-            <div className="pt-10 lg:px-96 container mx-auto relative"></div>
-            <div className="p-10 lg:pt-10 lg:px-96 container mx-auto relative lg:px-56">
-                <p className="text-gray-50 m-auto ">{author.bio}</p>
+            <div className="p-10 lg:pt-10 lg:px:72 container mx-auto relative lg:px-56 text-gray-50">
+                <BlockContent
+                    blocks={author.body}
+                    projectId="qbil2d7s"
+                    dataset="production"
+                />
             </div>
         </main>
     );
