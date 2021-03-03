@@ -1,4 +1,4 @@
-import './home.css'
+import "./home.css";
 import { SocialIcon } from "react-social-icons";
 const Home = () => {
     return (
@@ -9,7 +9,8 @@ const Home = () => {
                         Frontend developer and UX/UI designer
                     </h1>
                     <p className="text-gray-50 my-5 cursive">
-                        My name is Filip an i'm a UX/UI designer and a Frontend developer, how have work at fitness24seven and some experience from frilanc project
+                        My name is Filip and I am a huge sport fan with a big
+                        passion for graphics designs and new technology.
                     </p>
                 </div>
                 <div className="mt-7 flex justify-center mb-4 lg:invisible md:invisible sm:invisible visible">
@@ -26,7 +27,7 @@ const Home = () => {
                         target="_blank"
                         bgColor="white"
                         fgColor="black"
-                        style={{ height: 50, width: 50}}
+                        style={{ height: 50, width: 50 }}
                     />
                     <SocialIcon
                         url="https://twitter.com/sjobergfilip"
